@@ -10,7 +10,7 @@ let bowling = {
         
     ],
     
-    createMatchScores : function(){
+    createSetScores : function(){
         
         this.players.forEach(player => { 
             for(i=0; i<10; i++){
@@ -20,12 +20,26 @@ let bowling = {
             
         });
         
+    },
+
+    totalMatchScores : function(){
+
+        this.players.forEach(player =>{
+
+            let total_score = player.Scores.reduce((score, n)=> score + n, 0);
+            console.log(`Il punteggio di ${player.Name} e' ${total_score}`);
+                
+
+        });
+
+        
     }
 
     
 }
 
 console.log(bowling);
-bowling.createMatchScores();
+bowling.createSetScores();
 console.log(bowling);
+bowling.totalMatchScores();
 
